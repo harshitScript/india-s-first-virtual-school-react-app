@@ -1,0 +1,33 @@
+.singleCourseCard {
+  margin: 1vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.singleCourseCard:hover {
+  background-color: var(--secondary-color);
+}
+
+.singleCourseCard > span {
+  width: 50%;
+  display: block;
+  color: var(--main-color);
+  font-size: 3vh;
+  font-weight: bolder;
+}
+
+.singleCourseCard > div {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.singleCourseCard > div > button {
+  width: 40%;
+}
+
+.singleCourseCard > div > button:hover{
+    background-color: white;
+    color: var(--main-color);
+}

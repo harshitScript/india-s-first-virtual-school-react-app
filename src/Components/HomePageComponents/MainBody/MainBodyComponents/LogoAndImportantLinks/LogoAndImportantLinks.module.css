@@ -1,0 +1,57 @@
+.cardWidth {
+  width: 100%;
+  animation: logoAndImpLinksMount 3s ease-out 1 normal forwards;
+}
+
+.logoImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage > img {
+  border-radius: 2vh;
+}
+
+.impLinksSpan {
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+  font-size: 5vh;
+  text-transform: uppercase;
+  text-decoration: underline;
+  display: block;
+  margin:1vh;
+  width: 100%;
+  text-align: center;
+}
+
+/* ANIMATIONS */
+
+@keyframes logoAndImpLinksMount {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  80% {
+    opacity: 0;
+  }
+  90%{
+    opacity: 0.5;
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 828px) {
+  .cardWidth{
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+

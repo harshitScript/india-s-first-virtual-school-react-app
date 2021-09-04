@@ -1,0 +1,68 @@
+.navBarDiv {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  box-sizing: border-box;
+}
+.navBarDiv > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.navBarDiv > nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBarDiv > nav > ul > li {
+  list-style-type: none;
+  margin: 1vh;
+  color: white;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.mainHeader {
+  color: white;
+  font-size: 5vh;
+  font-weight: bold;
+  margin: 1vh;
+}
+.logoImage {
+  border-radius: 2vh;
+  margin: 1vh;
+}
+
+.navBarDiv > nav > ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+
+.activeClassName {
+  border-bottom: 1vh solid white;
+}
+
+.navBarDiv > nav > ul > li > button {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: bold;
+  border-radius: 1vh;
+  border: none;
+}
+
+.profileImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileImg {
+  border-radius: 5vh;
+  box-sizing: border-box;
+  margin-top : 1vh;
+  box-shadow: 0 0 1vh black;
+}

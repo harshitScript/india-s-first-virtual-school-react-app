@@ -1,0 +1,6 @@
+.mainContent {
+  box-sizing: border-box;
+  height: 87vh;
+  width: 100vw;
+  overflow: auto;
+}

@@ -1,0 +1,59 @@
+.backdrop {
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  z-index: 100;
+  width: 40%;
+  min-height: 20vh;
+  max-height: 50vh;
+  overflow: auto;
+  position: fixed;
+  top: 25vh;
+  left: 30%;
+  background: linear-gradient(to bottom, grey, white);
+  box-sizing: border-box;
+  border-bottom: 4vh solid var(--main-color);
+  padding: 1vh;
+}
+
+.cancelHolderDiv {
+  display: flex;
+  justify-content: flex-end;
+  color: red;
+  cursor: pointer;
+}
+
+.notFoundSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.modalEnter {
+  animation: modalAnimation 1s ease-out normal forwards;
+}
+.modalExit {
+  animation: modalAnimation 1s ease-out reverse forwards;
+}
+
+@keyframes modalAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

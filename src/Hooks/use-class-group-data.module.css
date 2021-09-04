@@ -1,0 +1,22 @@
+.classCard {
+  margin: 1vh;
+}
+
+.classCard:hover {
+  background-color: rgb(247, 115, 247);
+  cursor: pointer;
+}
+
+.loadingCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.errorCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

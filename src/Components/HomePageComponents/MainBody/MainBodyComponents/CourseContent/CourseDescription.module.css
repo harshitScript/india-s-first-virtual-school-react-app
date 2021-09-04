@@ -1,0 +1,23 @@
+.courseDescCard {
+  background-color: white;
+  margin: 1vh;
+  display: flex;
+  justify-content: center;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.classDescDiv {
+  width: 70%;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+
+
+

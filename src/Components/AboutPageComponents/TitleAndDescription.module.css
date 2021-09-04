@@ -1,0 +1,16 @@
+.headerSpan {
+  color: var(--main-color);
+  font-size: 5vh;
+  font-weight: medium;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.descSpan {
+  display: block;
+  color: var(--secondary-color);
+  font-size: 2vh;
+  text-align: center;
+}

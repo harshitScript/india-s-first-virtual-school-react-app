@@ -1,0 +1,13 @@
+.deatilsCard {
+  box-sizing: border-box;
+  padding: 0.1vh;
+}
+
+.deatilsCard > summary {
+  color: var(--main-color);
+}
+
+.deatilsCard > p {
+  color: var(--secondary-color);
+  font-size: small;
+}

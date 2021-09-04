@@ -1,0 +1,19 @@
+.btnConatinerDiv > button {
+  width: 33.33%;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+}
+
+.btnConatinerDiv > button:focus {
+  background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 500px) {
+  .btnConatinerDiv > button {
+    width: 100%;
+    background-color:var(--main-color);
+    color: white;
+    font-weight: bolder;
+  }
+}

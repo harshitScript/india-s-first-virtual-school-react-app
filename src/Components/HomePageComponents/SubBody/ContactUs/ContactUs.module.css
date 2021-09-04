@@ -1,0 +1,23 @@
+.headerSpan {
+  color: white;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 4vh;
+  font-weight: bolder;
+  box-sizing: border-box;
+  padding: 2vh;
+}
+
+.subTextSpan {
+  color: white;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.7vh;
+}
+
+.subTextSpan > a{
+    color: white;
+    cursor: pointer;
+}

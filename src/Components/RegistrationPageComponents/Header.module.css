@@ -1,0 +1,12 @@
+.headerSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 2vh;
+  font-size: 5vh;
+  color: var(--main-color);
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+}

@@ -1,0 +1,12 @@
+.simpleButton {
+  background: var(--main-color);
+  border-radius: 1vh;
+  border: none;
+  height: 5vh;
+  margin: 1vh;
+  color: white;
+}
+
+.simpleButton:hover{
+    background:var(--secondary-color) ;
+}

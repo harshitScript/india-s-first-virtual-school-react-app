@@ -1,0 +1,14 @@
+.linkCard {
+  height: 5vh;
+  background: white;
+  width: 90%;
+  color: var(--main-color);
+  margin: 1vh auto;
+  font-weight: 500;
+  box-shadow: 0 0 0.5vh var(--main-color);
+}
+
+.linkCard:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}

@@ -1,0 +1,16 @@
+.headerSpan {
+  font-size: 3vh;
+  display: block;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.subSpan {
+  color: white;
+  display: block;
+  font-size: small;
+  text-align: center;
+  width: 100%;
+}

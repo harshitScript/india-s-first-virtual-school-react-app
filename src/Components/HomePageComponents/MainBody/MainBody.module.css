@@ -1,0 +1,40 @@
+.mainBodyDiv {
+  box-sizing: border-box;
+  padding: 1vh;
+  height: fit-content;
+  
+}
+.leftDiv {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 1vh;
+  float: left;
+}
+.centerDiv {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 1vh;
+  float: left;
+}
+.rightDiv {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 1vh;
+  float: left;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 828px) {
+  .leftDiv {
+    width: 100%;
+  }
+
+  .centerDiv {
+    width: 100%;
+  }
+
+  .rightDiv {
+    width: 100%;
+  }
+}

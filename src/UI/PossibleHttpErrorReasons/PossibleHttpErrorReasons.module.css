@@ -1,0 +1,17 @@
+.detailsTag {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
+.detailsTag > summary {
+  text-transform: uppercase;
+  font-size: 2vh;
+  color: var(--main-color);
+}
+
+.detailsTag > ol > li {
+  font-size: 1.7vh;
+  color: var(--secondary-color);
+}

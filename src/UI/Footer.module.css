@@ -1,0 +1,16 @@
+.footerDiv {
+  box-sizing: border-box;
+  height: 3vh;
+  padding: 1vh;
+  clear: both;
+  width: 100vw;
+  background-color: var(--main-color);
+}
+
+.footerDiv > span {
+  display: block;
+  width: 100vw;
+  text-align: center;
+  font-size: 1vh;
+  color: white;
+}

@@ -1,0 +1,39 @@
+.formButtonGroup {
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
+.formButtonGroup > button {
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    white,
+    var(--secondary-color),
+    var(--main-color)
+  );
+  color: white;
+  border-radius: 1vh;
+  border: none;
+}
+
+.formButtonGroup > button:disabled{
+    background: linear-gradient(to right , white , grey);
+    cursor: not-allowed;
+}
+
+.formButtonGroup > button:hover {
+  box-shadow: 0 0 1vh black;
+}
+
+.formButtonGroup > div {
+  box-sizing: border-box;
+  padding: 1vh 0vh 1vh 0vh;
+}
+
+.formButtonGroup > div > button {
+  width: 50%;
+  background: var(--main-color);
+  color: white;
+  border-radius: 1vh;
+  border: none;
+}

@@ -1,0 +1,65 @@
+.formCard {
+  width: 50%;
+  background-color: transparent;
+  animation: formCardMount 1s ease-out 1 normal forwards;
+}
+
+.formGroup {
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
+.formGroup > input {
+  width: 100%;
+  border: none;
+  border-radius: 1vh;
+  height: 5vh;
+  box-sizing: border-box;
+  border-bottom: 1vh solid var(--secondary-color);
+}
+
+.formGroup > button {
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 1vh;
+  font-weight: bold;
+}
+
+.formGroup > span {
+  display: block;
+  color: red;
+}
+
+.newUserButtonDiv > span {
+  display: block;
+  color: var(--secondary-color);
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.passwordIcon {
+  color: var(--main-color);
+  float: right;
+}
+
+
+
+@keyframes formCardMount {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.5;
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}

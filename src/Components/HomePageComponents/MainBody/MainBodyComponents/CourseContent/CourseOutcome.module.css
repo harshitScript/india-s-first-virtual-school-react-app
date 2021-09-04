@@ -1,0 +1,9 @@
+.headerSpan {
+  font-weight: bolder;
+  color: var(--main-color);
+  display: block;
+}
+
+.list > li {
+  color: var(--main-color);
+}

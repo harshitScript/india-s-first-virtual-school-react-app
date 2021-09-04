@@ -1,0 +1,55 @@
+
+.profileImageDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
+.profileImageDiv > img {
+  width: 15vh;
+  height: 15vh;
+  border-radius: 15vh;
+  position: relative;
+  box-shadow: 0 0 1vh black;
+  transition: all 1s ease-out;
+}
+
+.profileImageDiv > img:hover {
+  border-radius: 1vh;
+  position: relative;
+}
+
+.spanDiv {
+  box-sizing: border-box;
+  padding: 1vh;
+  color: var(--main-color);
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.spanDiv > span:first-of-type {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 4vh;
+  width: 100%;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.spanDiv > span:nth-child(2) {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 3vh;
+  color: var(--main-color);
+}
+
+.spanDiv > span {
+  display: block;
+  width: 100%;
+}

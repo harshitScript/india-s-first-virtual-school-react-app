@@ -1,0 +1,11 @@
+.classDetailsPageMainContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingAndErrorClass{
+    width: 70%;
+    text-align: center;
+}
+

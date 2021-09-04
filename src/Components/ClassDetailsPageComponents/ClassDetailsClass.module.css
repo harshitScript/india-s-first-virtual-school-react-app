@@ -1,0 +1,60 @@
+.classDetailsCard {
+  width: 70%;
+  animation: classDetailsCardMount 1s ease-out 1 normal forwards;
+}
+
+.headerSpan {
+  color: white;
+  font-size: 5vh;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.subHeaderSpan {
+  color: white;
+  font-size: 3vh;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subHeaderSpan > span {
+  color: var(--secondary-color);
+}
+
+.subjectsSpan {
+  color: white;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
+.descSpan {
+  color: whitesmoke;
+  display: block;
+  text-align: center;
+  font-size: small;
+}
+
+@keyframes classDetailsCardMount {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.5;
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}

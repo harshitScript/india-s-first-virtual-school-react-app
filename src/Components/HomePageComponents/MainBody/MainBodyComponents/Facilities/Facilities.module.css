@@ -1,0 +1,56 @@
+.cardWidth {
+  width: 100%;
+  animation: facilitiesMount 1s ease-out 1 normal forwards;
+}
+
+.headerSpan {
+  font-size: 5vh;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.facilitiesItem {
+  height: 5vh;
+  background: white;
+  width: 90%;
+  color: var(--main-color);
+  margin: 1vh auto;
+  font-weight: 500;
+}
+
+.facilitiesItem:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* ANIMATIONS */
+
+@keyframes facilitiesMount {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.5;
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+/*  MEDIA QUERIES */
+@media screen and (max-width: 828px) {
+  .cardWidth {
+    width: 60%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,9 @@
+.subHeader{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 3vh;
+    color: var(--main-color);
+    font-weight: bolder;
+    text-transform: uppercase;
+}

@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+::selection {
+  background-color: violet;
+  color: whitesmoke;
+}
+
+:root {
+  --main-color: purple;
+  --secondary-color: rgb(247, 115, 247);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +46,31 @@
     transform: rotate(360deg);
   }
 }
+
+.enter {
+  animation: enter 300ms linear normal forwards;
+}
+
+.exit {
+  animation: exit 300ms linear normal forwards;
+}
+
+@keyframes enter {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes exit {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+

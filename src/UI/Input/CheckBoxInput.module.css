@@ -1,0 +1,11 @@
+.formGroup {
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
+.formGroup > label {
+  color: var(--secondary-color);
+  width: 100%;
+  display: block;
+  text-align: center;
+}

@@ -1,0 +1,36 @@
+.firstSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 3vh;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.secondSpan {
+  font-size: 4vh;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--secondary-color);
+  font-weight: bolder;
+}
+
+.thirdSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5vh;
+  color: var(--main-color);
+}
+
+.fourthSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 2vh;
+  box-sizing: border-box;
+  padding: 0.5vh;
+  color: var(--main-color);
+  text-transform: uppercase;
+}

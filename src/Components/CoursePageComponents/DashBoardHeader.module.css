@@ -1,0 +1,49 @@
+.dashBoardFlexCard {
+  margin: 2vh auto;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 1vh;
+  background-color: white;
+  animation: dashBoardMount 1s ease-out 1 normal forwards;
+}
+
+.firstSpan {
+  display: block;
+  width: 100%;
+  color: var(--main-color);
+  text-align: center;
+  font-size: 5vh;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.secondSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.loadingAndErrorCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes dashBoardMount {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.5;
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}

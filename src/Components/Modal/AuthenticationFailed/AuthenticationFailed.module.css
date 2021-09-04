@@ -1,0 +1,23 @@
+.firstSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--main-color);
+  font-size: 3vh;
+}
+
+.alertSign {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 5vh;
+  color: red;
+  transform: rotate(0deg);
+  transition: all 1s ease-out;
+}
+
+.alertSign:hover {
+  font-size: 7vh;
+  transform: rotate(360deg);
+}
+

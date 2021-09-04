@@ -1,0 +1,14 @@
+.mainHeaderSpan {
+  color: var(--main-color);
+  font-size: 3vh;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.buttonContainerDiv {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

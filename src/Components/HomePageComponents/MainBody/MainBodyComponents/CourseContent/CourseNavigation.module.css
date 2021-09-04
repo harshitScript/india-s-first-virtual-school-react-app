@@ -1,0 +1,23 @@
+.linksContainer{
+    display: flex;
+    justify-content: center;
+    margin: 1vh;
+}
+
+.linksContainer a {
+    width: 25%;
+    background: white;
+    box-shadow: 0 0 0.5vh black;
+    height: 5vh;
+    color: var(--main-color);
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linksContainer a:focus{
+    color: white;
+    background-color: var(--secondary-color);
+}
