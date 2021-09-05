@@ -7,7 +7,7 @@ import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import AboutPage from "./Pages/AboutPage/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import ClassDetailsPage from "./Pages/ClassDetailsPage/ClassDetailsPage";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+//import { CSSTransition, TransitionGroup } from "react-transition-group";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import { useContext } from "react";
 import AuthContext from "./Context/auth-context";
