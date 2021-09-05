@@ -5,7 +5,7 @@ const SelectClass = (props) => {
   
 
   return (
-    <div className={styles.formGroup}>
+    <div className={`${styles.formGroup} ${props.classNameAppliedToFormGroupDiv}`}>
       <label htmlFor="STD_CLASS">
         Class* : <span>(to be enrolled.)</span>
       </label>

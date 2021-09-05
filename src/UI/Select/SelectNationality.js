@@ -2,7 +2,7 @@ import { BiErrorCircle } from "react-icons/bi";
 import styles from "./SelectNationality.module.css";
 const SelectNationality = (props) => {
   return (
-    <div className={styles.formGroup}>
+    <div className={`${styles.formGroup} ${props.classNameAppliedToFormGroupDiv}`}>
       <label htmlFor="STD_NATIONALITY">Nationality* :</label>
       <select
         name="STD_NATIONALITY"

@@ -42,7 +42,7 @@ const HelpDocs = () => {
   return (
     <>
       <span className={styles.headerSpan}>{"Help & Queries"}</span>
-
+      <hr />
       {contentToDisplay}
     </>
   );

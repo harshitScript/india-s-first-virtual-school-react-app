@@ -3,6 +3,7 @@
   background-color: var(--main-color);
   color: white;
   font-weight: bold;
+  border: none;
 }
 
 .btnConatinerDiv > button:focus {

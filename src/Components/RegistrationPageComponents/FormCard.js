@@ -255,6 +255,7 @@ const FormCard = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(false);
 
     const userDataObj = {
       studentName: `${enteredStudentFirstName}${
@@ -362,7 +363,7 @@ const FormCard = (props) => {
           onBlur={studentFirstWasTouchedHandler}
           hasError={studentFirstNameErrorDisplay}
           errorMsg="Enter a valid name."
-          label="First name*"
+          label="First name* :"
           placeHolder="Enter first name"
           required={true}
         />
@@ -373,7 +374,7 @@ const FormCard = (props) => {
           onBlur={studentMiddleWasTouchedHandler}
           hasError={studentMiddleNameErrorDisplay}
           errorMsg="Enter a valid middle name."
-          label="Middle name"
+          label="Middle name :"
           placeHolder="Enter middle name"
           required={false}
         />
@@ -384,7 +385,7 @@ const FormCard = (props) => {
           onBlur={studentLastWasTouchedHandler}
           hasError={studentLastNameErrorDisplay}
           errorMsg="Enter a valid last name."
-          label="Last name*"
+          label="Last name* :"
           placeHolder="Enter last name"
           required={true}
         />
@@ -399,7 +400,7 @@ const FormCard = (props) => {
           onBlur={fatherFirstWasTouchedHandler}
           hasError={fatherFirstNameErrorDisplay}
           errorMsg="Enter a valid first name."
-          label="First name*"
+          label="First name* :"
           placeHolder="Enter first name"
           required={true}
         />
@@ -410,7 +411,7 @@ const FormCard = (props) => {
           onBlur={fatherMiddleWasTouchedHandler}
           hasError={fatherMiddleNameErrorDisplay}
           errorMsg="Enter a valid middle name."
-          label="Middle name"
+          label="Middle name :"
           placeHolder="Enter middle name"
           required={false}
         />
@@ -421,7 +422,7 @@ const FormCard = (props) => {
           onBlur={fatherLastWasTouchedHandler}
           hasError={fatherLastNameErrorDisplay}
           errorMsg="Enter a valid last name."
-          label="Last name*"
+          label="Last name* :"
           placeHolder="Enter last name"
           required={true}
         />
@@ -436,7 +437,7 @@ const FormCard = (props) => {
           onBlur={motherFirstWasTouchedHandler}
           hasError={motherFirstNameErrorDisplay}
           errorMsg="Enter a valid first name."
-          label="First name*"
+          label="First name* :"
           placeHolder="Enter first name"
           required={true}
         />
@@ -447,7 +448,7 @@ const FormCard = (props) => {
           onBlur={motherMiddleWasTouchedHandler}
           hasError={motherMiddleNameErrorDisplay}
           errorMsg="Enter a valid middle name."
-          label="Middle name"
+          label="Middle name :"
           placeHolder="Enter middle name"
           required={false}
         />
@@ -458,7 +459,7 @@ const FormCard = (props) => {
           onBlur={motherLastWasTouchedHandler}
           hasError={motherLastNameErrorDisplay}
           errorMsg="Enter a valid last name."
-          label="Last name*"
+          label="Last name* :"
           placeHolder="Enter last name"
           required={true}
         />
@@ -473,7 +474,7 @@ const FormCard = (props) => {
           onBlur={dateOfBirthWasTouchedHandler}
           hasError={dateOfBirthErrorDisplay}
           errorMsg="Enter a valid date."
-          label="Date of birth*"
+          label="Date of birth* :"
           subLabel="(we have no age boundation.)"
           required={true}
         />
@@ -510,7 +511,7 @@ const FormCard = (props) => {
           onBlur={emailWasTouchedHandler}
           hasError={emailErrorDisplay}
           errorMsg="Enter a valid email."
-          label="Email*"
+          label="Email* :"
           required={true}
         />
         <Input
@@ -522,7 +523,7 @@ const FormCard = (props) => {
           onBlur={passwordWasTouchedHandler}
           hasError={passwordErrorDisplay}
           errorMsg="Password must be 6 characters long or more."
-          label="Password*"
+          label="Password* :"
           subLabel="(use letters, numbers and symbols combination for strong password. )"
           required={true}
         />
@@ -536,7 +537,7 @@ const FormCard = (props) => {
             onBlur={confirmedPasswordWasTouchedHandler}
             hasError={confirmedPasswordErrorDisplay}
             errorMsg="Password not matched"
-            label="Confirm Password*"
+            label="Confirm Password* :"
             required={true}
           />
         )}
@@ -552,7 +553,7 @@ const FormCard = (props) => {
           hasError={photoObjErrorDisplay}
           errorMsg="Select a valid file."
           accept="image/jpg,image/png,image/jpeg"
-          label="Photo*"
+          label="Photo* :"
           subLabel="(jpg/png)"
           required={true}
         />
@@ -564,7 +565,7 @@ const FormCard = (props) => {
           hasError={idObjErrorDisplay}
           errorMsg="Select a valid file."
           accept=".pdf"
-          label="ID*"
+          label="ID* :"
           subLabel="(pdf)"
           required={true}
         />
@@ -586,7 +587,7 @@ const FormCard = (props) => {
           onBlur={contactWasTouchedHandler}
           hasError={contactErrorDisplay}
           errorMsg="Enter a valid phone number."
-          label="Phone*"
+          label="Phone* :"
           subLabel="(Parent's)"
           required={true}
         />

@@ -1,7 +1,9 @@
 import styles from "./CheckBoxInput.module.css";
 const CheckBoxInput = (props) => {
   return (
-    <div className={styles.formGroup}>
+    <div
+      className={`${styles.formGroup} ${props.classNameAppliedToFormGroupDiv}`}
+    >
       <label htmlFor={props.id}>
         {props.label}&nbsp;
         <input

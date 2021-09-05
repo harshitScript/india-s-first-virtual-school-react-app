@@ -2,7 +2,9 @@ import { BiErrorCircle } from "react-icons/bi";
 import styles from "./TextArea.module.css";
 const TextArea = (props) => {
   return (
-    <div className={styles.formGroup}>
+    <div
+      className={`${styles.formGroup} ${props.classNameAppliedToFormGroupDiv}`}
+    >
       <label htmlFor={props.id}>{props.label}</label>
       <textarea
         onChange={props.onChange}

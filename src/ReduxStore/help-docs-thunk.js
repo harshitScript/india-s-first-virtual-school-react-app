@@ -4,6 +4,7 @@ import { helpDocsSliceActions } from "./help-docs-slice";
 const helpDocsThunk = () => {
   return (dispatch) => {
     dispatch(helpDocsSliceActions.setLoadingTrue());
+    dispatch(helpDocsSliceActions.setErrorFalse());
     axios
       .get("https://ifvs-8e70a-default-rtdb.firebaseio.com/help-docs.json")
       .then((responseObj) => {

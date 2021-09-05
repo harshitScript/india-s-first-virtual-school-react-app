@@ -3,6 +3,7 @@ import { classDataSliceActions } from "./class-data-slice";
 const classDataFetcherThunk = () => {
   return (disptach) => {
     disptach(classDataSliceActions.setLoadingTrue());
+    disptach(classDataSliceActions.setErrorFalse());
     axios
       .get("https://ifvs-8e70a-default-rtdb.firebaseio.com/class-data.json")
       .then((responseObj) => {

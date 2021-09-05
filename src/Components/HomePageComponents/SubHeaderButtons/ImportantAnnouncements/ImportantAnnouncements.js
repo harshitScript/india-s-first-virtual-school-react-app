@@ -31,7 +31,10 @@ const ImportantAnnouncements = () => {
       <ul>
         {announcements.map((singleObj) => (
           <li className={styles.announcementMsgListItem} key={singleObj.id}>
-            {singleObj.announcment}
+            {singleObj.announcment}{" "}
+            <a href={singleObj.link} target="_blank" rel="noreferrer">
+              {singleObj.linkText}
+            </a>
           </li>
         ))}
       </ul>
@@ -54,6 +57,7 @@ const ImportantAnnouncements = () => {
   return (
     <>
       <span className={styles.headerSpan}>Important announcements</span>
+      <hr />
       {contentToDisplay}
     </>
   );

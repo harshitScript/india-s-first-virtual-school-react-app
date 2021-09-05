@@ -1,4 +1,5 @@
 import ContactUs from "./ContactUs/ContactUs";
+import Feedback from "./Feedback/Feedback";
 import FollowUs from "./FollowUs/FollowUs";
 import Location from "./Location/Location";
 import styles from "./SubBody.module.css";
@@ -15,9 +16,7 @@ const SubBody = () => {
         <ContactUs />
       </div>
       <div>
-        support
-        <br />
-        gagga
+       <Feedback />
       </div>
     </div>
   );

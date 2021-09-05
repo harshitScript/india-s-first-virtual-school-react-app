@@ -18,7 +18,8 @@ const NavigationBar = (props) => {
   const dispatch = useDispatch();
 
   const userProfileOpenHandler = () => {
-    dispatch(modalSliceActions.displayModal({ identifier: "user-profile" }));
+    isAuthenticated &&
+      dispatch(modalSliceActions.displayModal({ identifier: "user-profile" }));
   };
 
   const logoutModalDisplayHandler = () => {

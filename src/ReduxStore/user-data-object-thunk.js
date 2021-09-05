@@ -4,6 +4,7 @@ import { userDataObjectSliceActions } from "./user-data-object-slice";
 const userDataObjectSliceThunk = (currentEmail) => {
   return (dispatch) => {
     dispatch(userDataObjectSliceActions.setLoadingTrue());
+    dispatch(userDataObjectSliceActions.setErrorFalse());
     axios
       .get("https://ifvs-8e70a-default-rtdb.firebaseio.com/user-data.json")
       .then((responseObj) => {

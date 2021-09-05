@@ -3,7 +3,7 @@ const SimpleButton = (props) => {
   return (
     <button
       type={props.type}
-      className={`${props.className} ${styles.simpleButton}`}
+      className={` ${styles.simpleButton} ${props.className}`}
       onClick={props.onClick}
     >
       {props.children}

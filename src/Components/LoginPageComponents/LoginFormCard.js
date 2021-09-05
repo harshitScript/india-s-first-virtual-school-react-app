@@ -84,6 +84,7 @@ const LoginFormCard = (props) => {
     }
 
     authCtx.setLoadingToTrue();
+    authCtx.setErrorToFalse();
     axios
       .post(
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxDe5NBOX90FK4vmxhFxedti1ovtRNdUQ",

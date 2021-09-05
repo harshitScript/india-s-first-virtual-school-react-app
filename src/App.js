@@ -7,7 +7,7 @@ import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import AboutPage from "./Pages/AboutPage/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import ClassDetailsPage from "./Pages/ClassDetailsPage/ClassDetailsPage";
-//import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import { useContext } from "react";
 import AuthContext from "./Context/auth-context";
@@ -21,6 +21,20 @@ function App() {
   const authCtx = useContext(AuthContext);
   const isAuthenticated = authCtx.isAuthenticated;
 
+  /*
+  // CHECKING THE USERS ONLINE STATUS(when application loads initially).
+  if (window.navigator.online === false) {
+    const confirmation = window.confirm(
+      "Do you wanna use offline mode ? many features may not work"
+    );
+    if (confirmation) {
+      alert("Offline mode activated !");
+    } else {
+      window.close();
+    }
+  }
+  */
+
   return (
     <>
       <NavigationBar />
@@ -29,8 +43,8 @@ function App() {
         <CSSTransition
           key={location.pathname}
           timeout={{
-            enter: 300,
-            exit: 300,
+            enter: 500,
+            exit: 500,
           }}
           classNames={{
             enter: "",

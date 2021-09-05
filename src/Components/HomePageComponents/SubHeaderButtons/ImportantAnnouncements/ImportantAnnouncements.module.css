@@ -31,4 +31,5 @@
 .announcementMsgListItem {
   list-style-type: circle;
   color: var(--main-color);
+  width: 100%;
 }

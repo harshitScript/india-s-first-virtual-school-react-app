@@ -3,7 +3,7 @@ import Card from "../../../UI/Card";
 import { useParams } from "react-router-dom";
 import ImportantAnnouncements from "./ImportantAnnouncements/ImportantAnnouncements";
 import HelpDocs from "./HelpDocs/HelpDocs";
-import HowToUse from "./HowToUse";
+import HowToUse from './HowToUse/HowToUse'
 
 const DisplayBox = () => {
   const params = useParams();

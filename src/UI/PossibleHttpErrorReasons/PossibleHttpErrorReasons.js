@@ -5,7 +5,9 @@ const PossibleHttpErrorReasons = (props) => {
       <summary>Possible reasons</summary>
       <ol>
         <li>Network error/Weak connection.</li>
-        <li>Email/Password is mis-matched.</li>
+        {props.emailPasswordMismatchedDisplay && (
+          <li>Email/Password is mis-matched.</li>
+        )}
         <li>500 | Internal server error.</li>
         {props.displayNewUserLine && <li>New user ? Register first !!!</li>}
       </ol>

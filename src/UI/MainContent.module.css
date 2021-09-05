@@ -1,6 +1,11 @@
 .mainContent {
   box-sizing: border-box;
   height: 87vh;
-  width: 100vw;
+  width: 100%;
   overflow: auto;
+}
+
+.unorderedList{
+  box-sizing: border-box;
+  width: 100%;
 }

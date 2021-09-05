@@ -10,6 +10,8 @@ import { modalSliceActions } from "../../ReduxStore/modal-slice";
 import AuthenticationFailed from "./AuthenticationFailed/AuthenticationFailed";
 import AddUserError from "./AddUserError/AddUserError";
 import CSSTransitionUI from "../../UI/CSSTransitionUI/CSSTransitionUI";
+import FeedbackSuccesfull from "./FeedbackSuccesfull/FeedbackSuccesfull";
+import FeedbackError from "./FeedbackError/FeedbackError";
 
 const Modal = (props) => {
   const dispatch = useDispatch();
@@ -35,6 +37,12 @@ const Modal = (props) => {
   }
   if (modalType === "add-user-error") {
     contentToDisplay = <AddUserError />;
+  }
+  if (modalType === "feedback-successfull") {
+    contentToDisplay = <FeedbackSuccesfull />;
+  }
+  if (modalType === "feedback-error") {
+    contentToDisplay = <FeedbackError />;
   }
 
   const modalHideHandler = () => {

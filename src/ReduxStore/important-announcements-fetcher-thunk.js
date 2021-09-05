@@ -1,9 +1,10 @@
 import axios from "axios";
 import { importantAnnouncmentActions } from "./important-announcement-slice";
 
-const importantAnnouncementThunk =() => {
+const importantAnnouncementThunk = () => {
   return (dispatch) => {
     dispatch(importantAnnouncmentActions.setLoadingTrue());
+    dispatch(importantAnnouncmentActions.setErrorFalse());
     axios
       .get(
         "https://ifvs-8e70a-default-rtdb.firebaseio.com/important-announcements.json"

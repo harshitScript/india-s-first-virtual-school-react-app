@@ -48,11 +48,11 @@
 }
 
 .enter {
-  animation: enter 300ms linear normal forwards;
+  animation: enter 500ms linear normal forwards;
 }
 
 .exit {
-  animation: exit 300ms linear normal forwards;
+  animation: exit 500ms linear normal forwards;
 }
 
 @keyframes enter {
@@ -72,5 +72,3 @@
     transform: translateX(-100%);
   }
 }
-
-

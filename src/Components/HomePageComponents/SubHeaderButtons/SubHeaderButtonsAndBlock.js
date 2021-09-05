@@ -1,21 +1,34 @@
 import styles from "./SubHeaderButtonsAndBlock.module.css";
-import { Route, useRouteMatch, useHistory } from "react-router";
+import { Route, useRouteMatch, useHistory, useLocation } from "react-router";
 import DisplayBox from "./DisplayBox";
 
 const SubHeaderButtonsAndBlock = () => {
   const history = useHistory();
   const match = useRouteMatch();
+  const location = useLocation();
 
   const importantAnnouncementOpener = () => {
-    history.push(`${match.path}/info-box/important-announcements`);
+    if (location.pathname === "/home-page/info-box/important-announcements") {
+      history.push(match.path);
+    } else {
+      history.push(`${match.path}/info-box/important-announcements`);
+    }
   };
 
   const helpDocsOpener = () => {
-    history.push(`${match.path}/info-box/help-docs`);
+    if (location.pathname === "/home-page/info-box/help-docs") {
+      history.push(match.path);
+    } else {
+      history.push(`${match.path}/info-box/help-docs`);
+    }
   };
 
   const howToUseOpener = () => {
-    history.push(`${match.path}/info-box/use-instructions`);
+    if (location.pathname === "/home-page/info-box/use-instructions") {
+      history.push(match.path);
+    } else {
+      history.push(`${match.path}/info-box/use-instructions`);
+    }
   };
 
   return (

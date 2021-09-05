@@ -1,14 +1,14 @@
-import styles from "./AddUserError.module.css";
+import styles from "./FeedbackError.module.css";
 import { BiErrorAlt } from "react-icons/bi";
 import PossibleHttpErrorReasons from "../../../UI/PossibleHttpErrorReasons/PossibleHttpErrorReasons";
-const AddUserError = () => {
+const FeedbackError = () => {
   return (
     <>
       <span className={styles.firstSpan}>Unknown Error occured.</span>
       <BiErrorAlt className={styles.errorIcon} />
       <span className={styles.secondSpan}>Try again.</span>
-      <PossibleHttpErrorReasons emailPasswordMismatchedDisplay={true}/>
+      <PossibleHttpErrorReasons />
     </>
   );
 };
-export default AddUserError;
+export default FeedbackError;

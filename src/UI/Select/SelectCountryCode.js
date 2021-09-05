@@ -1,7 +1,7 @@
 import styles from "./SelectCountryCode.module.css";
 const SelectCountryCode = (props) => {
   return (
-    <div className={styles.formGroup}>
+    <div className={`${styles.formGroup} ${props.classNameAppliedToFormGroupDiv}`}>
       <label htmlFor="STD_COUNTRY_CODE">Country Code* :</label>
       <select
         name="STD_COUNTRY_CODE"

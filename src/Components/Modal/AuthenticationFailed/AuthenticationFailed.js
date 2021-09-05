@@ -7,7 +7,7 @@ const AuthenticationFailed = () => {
     <>
       <span className={styles.firstSpan}>Authentication Failed !</span>
       <AiFillAlert className={styles.alertSign} />
-      <PossibleHttpErrorReasons displayNewUserLine={true} />
+      <PossibleHttpErrorReasons displayNewUserLine={true} emailPasswordMismatchedDisplay={true}/>
     </>
   );
 };
