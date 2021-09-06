@@ -35,6 +35,8 @@ const LoginFormCard = (props) => {
   const [passwordType, setPasswordType] = useState("password");
   const [emailIsValid, setEmailIsValid] = useState(true);
   const [passwordIsValid, setPasswordIsValid] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   // PROPS DESTRUCTURING
   const { additionalFunctionality, displayInfoText, displayNewUserButton } =
@@ -68,9 +70,6 @@ const LoginFormCard = (props) => {
       />
     );
   }
-
-  const loading = authCtx.loading;
-  const error = authCtx.error;
 
   const registerUserHandler = () => {
     history.push("/register-user-page");
@@ -109,8 +108,8 @@ const LoginFormCard = (props) => {
       }
     }
 
-    authCtx.setLoadingToTrue();
-    authCtx.setErrorToFalse();
+    setLoading(true);
+    setError(false);
     axios
       .post(
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxDe5NBOX90FK4vmxhFxedti1ovtRNdUQ",
@@ -132,8 +131,6 @@ const LoginFormCard = (props) => {
           authCtx.loginHandler(responseObj.data.idToken, enteredEmail);
         }
 
-        authCtx.setErrorToFalse();
-        authCtx.setLoadingToFalse();
         additionalFunctionality();
       })
       .catch((error) => {
@@ -142,8 +139,8 @@ const LoginFormCard = (props) => {
             identifier: "auth-error",
           })
         );
-        authCtx.setLoadingToFalse();
-        authCtx.setErrorToTrue();
+        setError(true);
+        setLoading(false);
       });
   };
 

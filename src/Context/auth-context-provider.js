@@ -39,8 +39,6 @@ const AuthContextProvider = (props) => {
     initialIsAuthenticatedState
   );
   const [idToken, setIdToken] = useState(initialIdTokenState);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
 
   const loginHandler = (idToken, currentActiveEmail) => {
     setIsAuthenticated(true);
@@ -64,19 +62,6 @@ const AuthContextProvider = (props) => {
     setIdToken(newIdToken);
   };
 
-  const setLoadingToTrue = () => {
-    setLoading(true);
-  };
-  const setLoadingToFalse = () => {
-    setLoading(false);
-  };
-  const setErrorToTrue = () => {
-    setError(true);
-  };
-  const setErrorToFalse = () => {
-    setError(false);
-  };
-
   return (
     <AuthContext.Provider
       value={{
@@ -84,12 +69,7 @@ const AuthContextProvider = (props) => {
         idToken: idToken,
         loginHandler: loginHandler,
         logoutHandler: logoutHandler,
-        loading: loading,
-        error: error,
-        setLoadingToTrue: setLoadingToTrue,
-        setLoadingToFalse: setLoadingToFalse,
-        setErrorToTrue: setErrorToTrue,
-        setErrorToFalse: setErrorToFalse,
+
         updateIdToken: updateIdToken,
       }}
     >
