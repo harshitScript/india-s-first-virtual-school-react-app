@@ -1,11 +1,17 @@
 import { useSelector } from "react-redux";
 import styles from "./UserProfile.module.css";
+import SimpleButton from "../../../UI/Button/SimpleButton";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { modalSliceActions } from "../../../ReduxStore/modal-slice";
 
 const UserProfile = (props) => {
   const [currentUserObject, profileImageSrc] = useSelector((state) => [
     state.userData.currentUserObject,
     state.userData.profileImageSrc,
   ]);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   let dateOfBirth;
 
@@ -17,6 +23,19 @@ const UserProfile = (props) => {
   } else {
     dateOfBirth = `2021/09/31 *i was created*`;
   }
+
+  const emailPasswordChangePageOpenHandler = () => {
+    dispatch(modalSliceActions.hideModal());
+    history.push("/change-email-password-page");
+  };
+
+  const studentIdModalOpenHandler = () => {
+    dispatch(
+      modalSliceActions.displayModal({
+        identifier: "display-active-student-id",
+      })
+    );
+  };
 
   return (
     <>
@@ -30,7 +49,19 @@ const UserProfile = (props) => {
         <span>{`Father : ${currentUserObject.fatherName}`}</span>
         <span>{`Mother : ${currentUserObject.motherName}`}</span>
         <span>{`Nationality : ${currentUserObject.nationality}`}</span>
+        <span>{`Email : ${currentUserObject.email}`}</span>
         <span>{`Phone : +${currentUserObject.contact}`}</span>
+      </div>
+      <div className={styles.buttonContainer}>
+        <SimpleButton onClick={emailPasswordChangePageOpenHandler}>
+          Change Email
+        </SimpleButton>
+        <SimpleButton onClick={emailPasswordChangePageOpenHandler}>
+          Change Password
+        </SimpleButton>
+        <SimpleButton onClick={studentIdModalOpenHandler}>
+          Student ID
+        </SimpleButton>
       </div>
     </>
   );

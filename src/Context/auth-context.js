@@ -11,6 +11,7 @@ const AuthContext = createContext({
   setLoadingToFalse: () => {},
   setErrorToTrue: () => {},
   setErrorToFalse: () => {},
+  updateIdToken: (newIdToken) => {},
 });
 
 export default AuthContext;

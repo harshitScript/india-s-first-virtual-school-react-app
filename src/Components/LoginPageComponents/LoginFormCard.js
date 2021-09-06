@@ -1,4 +1,5 @@
 // THIS FORM HAS VALIDATION ON SUBMIT METHOD.
+// THIS FROM ACTS AS A LOGIN FROM(when we are not authenticated) AND AS A CONFIRMATION FORM(when we are authenticated. )
 
 import Card from "../../UI/Card";
 import styles from "./LoginFormCard.module.css";
@@ -10,6 +11,8 @@ import { useDispatch } from "react-redux";
 import { modalSliceActions } from "../../ReduxStore/modal-slice";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { BiErrorCircle } from "react-icons/bi";
+import { BsInfoCircle } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const emailPattern = /^(www.)?[a-zA-Z0-9.-]{0,}@[a-z]{3,6}.(com|co|org|in)$/;
 const passwordPattern = /^[\S]{6,}$/;
@@ -20,11 +23,22 @@ const LoginFormCard = (props) => {
   const authCtx = useContext(AuthContext);
   const history = useHistory();
   const dispatch = useDispatch();
+  const isAuthenticated = authCtx.isAuthenticated;
+
+  //GLOBAL STATES
+  const currentActiveEmail = useSelector(
+    (state) => state.userData.currentUserObject.email
+  );
+
+  // LO0CAL STATES
   const [formIsTouched, setFormIsTouched] = useState(false);
   const [passwordType, setPasswordType] = useState("password");
-
   const [emailIsValid, setEmailIsValid] = useState(true);
   const [passwordIsValid, setPasswordIsValid] = useState(true);
+
+  // PROPS DESTRUCTURING
+  const { additionalFunctionality, displayInfoText, displayNewUserButton } =
+    props;
 
   // SHOW/HIDE PASSWORD MECHANISM.
   const showHidePasswordHandler = () => {
@@ -69,7 +83,7 @@ const LoginFormCard = (props) => {
     setFormIsTouched(false);
   };
 
-  const loginHandler = (e) => {
+  const loginFormSubmitHandler = (e) => {
     e.preventDefault();
     const enteredEmail = emailRef.current.value;
     const enteredPassword = passwordRef.current.value;
@@ -81,6 +95,18 @@ const LoginFormCard = (props) => {
     if (!passwordPattern.test(enteredPassword)) {
       setPasswordIsValid(false);
       return;
+    }
+
+    // MAKING SURE THE USER ENTER CURRENT-AUTHORIZED-EMAIL IN CONFIRMATION LOGIN FORM.
+    if (isAuthenticated) {
+      if (currentActiveEmail !== enteredEmail) {
+        dispatch(
+          modalSliceActions.displayModal({
+            identifier: "confirmation-login-form-email-mismatched",
+          })
+        );
+        return;
+      }
     }
 
     authCtx.setLoadingToTrue();
@@ -95,14 +121,20 @@ const LoginFormCard = (props) => {
         }
       )
       .then((responseObj) => {
-        authCtx.loginHandler(
-          responseObj.data.idToken,
-          responseObj.data.expiresIn,
-          enteredEmail
-        );
+        // FOR CONFIRMATION LOGIN FORM
+        if (currentActiveEmail) {
+          console.log("idtoken updated.");
+          authCtx.updateIdToken(responseObj.data.idToken);
+        }
+
+        // FOR AUTHENTICATION LOGIN FORM
+        if (currentActiveEmail === undefined) {
+          authCtx.loginHandler(responseObj.data.idToken, enteredEmail);
+        }
+
         authCtx.setErrorToFalse();
         authCtx.setLoadingToFalse();
-        history.replace("/home-page");
+        additionalFunctionality();
       })
       .catch((error) => {
         dispatch(
@@ -130,7 +162,10 @@ const LoginFormCard = (props) => {
         message={(location) => "Leave the form unsaved ?"}
       />
       <Card className={styles.formCard}>
-        <form onFocus={promptWillDisplayHandler} onSubmit={loginHandler}>
+        <form
+          onFocus={promptWillDisplayHandler}
+          onSubmit={loginFormSubmitHandler}
+        >
           <div className={styles.formGroup}>
             <input
               ref={emailRef}
@@ -168,15 +203,24 @@ const LoginFormCard = (props) => {
           </div>
         </form>
 
-        <div className={styles.newUserButtonDiv}>
-          <span>OR</span>
+        {displayNewUserButton && (
+          <div className={styles.newUserButtonDiv}>
+            <span>OR</span>
 
-          <div className={styles.formGroup}>
-            <button type="button" onClick={registerUserHandler}>
-              New User
-            </button>
+            <div className={styles.formGroup}>
+              <button type="button" onClick={registerUserHandler}>
+                New User
+              </button>
+            </div>
           </div>
-        </div>
+        )}
+        {displayInfoText && (
+          <span className={styles.infoText}>
+            <BsInfoCircle />
+            &nbsp;
+            {props.infoText}
+          </span>
+        )}
       </Card>
     </>
   );

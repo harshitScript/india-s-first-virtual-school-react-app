@@ -41,13 +41,15 @@ const Input = forwardRef((props, ref) => {
         accept={props.accept}
         required={props.required}
       />
-      {props.showDisplayPasswordIcon && passwordIconToDisplay}
-      {props.hasError && (
-        <span>
-          <BiErrorCircle />
-          &nbsp;{props.errorMsg}
-        </span>
-      )}
+      <div className={styles.flexDiv}>
+        {props.hasError && (
+          <span>
+            <BiErrorCircle />
+            &nbsp;{props.errorMsg}
+          </span>
+        )}
+        {props.showDisplayPasswordIcon && passwordIconToDisplay}
+      </div>
     </div>
   );
 });

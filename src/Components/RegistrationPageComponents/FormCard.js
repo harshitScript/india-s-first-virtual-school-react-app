@@ -277,7 +277,6 @@ const FormCard = (props) => {
       nationality: selectedNationality,
       class: selectedClass,
       email: enteredEmail,
-      password: enteredPassword,
       confirmedPassword: enteredConfirmedPassword,
       photoURL: URL.createObjectURL(enteredPhotoObj),
       idURL: URL.createObjectURL(enteredIDObj),
@@ -310,7 +309,7 @@ const FormCard = (props) => {
             .then((responseObj) => {
               dispatch(
                 modalSliceActions.displayModal({
-                  identifier: "student-id",
+                  identifier: "student-id-when-new-user-added",
                   studentId: studentId,
                 })
               );

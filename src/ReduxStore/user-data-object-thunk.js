@@ -9,10 +9,12 @@ const userDataObjectSliceThunk = (currentEmail) => {
       .get("https://ifvs-8e70a-default-rtdb.firebaseio.com/user-data.json")
       .then((responseObj) => {
         dispatch(
-          userDataObjectSliceActions.setUserDataAndCurrentUserAndProfileImage({
-            userDataObj: responseObj.data,
-            email: currentEmail,
-          })
+          userDataObjectSliceActions.setUserDataAndCurrentUserAndProfileImageAndStudentId(
+            {
+              userDataObj: responseObj.data,
+              email: currentEmail,
+            }
+          )
         );
         dispatch(userDataObjectSliceActions.setDataIsPresent());
         dispatch(userDataObjectSliceActions.setErrorFalse());

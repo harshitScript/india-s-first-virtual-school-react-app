@@ -30,13 +30,18 @@
   border-bottom: 1vh solid var(--main-color);
 }
 
-.formGroup > span {
+.formGroup .flexDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexDiv > span {
   display: block;
   width: 100%;
   font-size: small;
   color: red;
 }
-
 .passwordIcon {
   color: var(--main-color);
   float: right;

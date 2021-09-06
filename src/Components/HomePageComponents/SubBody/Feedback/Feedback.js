@@ -36,8 +36,7 @@ const Feedback = () => {
   let objectToStore;
   let placeHolderText;
   if (isAuthenticated) {
-    url =
-      "https://ifvs-8e70a-default-rtdb.firebaseio.com/named-feedbacks.json";
+    url = "https://ifvs-8e70a-default-rtdb.firebaseio.com/named-feedbacks.json";
     objectToStore = {
       feedback: enteredFeedback,
       studentName: studentName,

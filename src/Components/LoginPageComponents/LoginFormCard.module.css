@@ -1,6 +1,6 @@
 .formCard {
   width: 50%;
-  background-color: transparent;
+  background-color: white;
   animation: formCardMount 1s ease-out 1 normal forwards;
 }
 
@@ -44,7 +44,13 @@
   float: right;
 }
 
-
+.infoText {
+  color: var(--secondary-color);
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: small;
+}
 
 @keyframes formCardMount {
   0% {

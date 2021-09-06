@@ -1,0 +1,9 @@
+.buttonFlexDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  width: 100%;
+  background-color: var(--secondary-color);
+}

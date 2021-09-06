@@ -15,6 +15,7 @@ import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
 import Footer from "./UI/Footer";
 import Modal from "./Components/Modal/Modal";
 import CoursePage from "./Pages/CoursePage/CoursePage";
+import ChangeEmailPasswordPage from "./Pages/ChangeEmailPasswordPage/ChangeEmailPasswordPage";
 
 function App() {
   const location = useLocation();
@@ -80,6 +81,13 @@ function App() {
         </Route>
         <Route path="/course-page">
           {isAuthenticated ? <CoursePage /> : <Redirect to="/home-page" />}
+        </Route>
+        <Route path="/change-email-password-page">
+          {isAuthenticated ? (
+            <ChangeEmailPasswordPage />
+          ) : (
+            <Redirect to="/home-page" />
+          )}
         </Route>
         <Route path="*">
           <NotFoundPage />

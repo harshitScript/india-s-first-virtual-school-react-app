@@ -12,10 +12,10 @@
   z-index: 100;
   width: 40%;
   min-height: 20vh;
-  max-height: 50vh;
+  max-height: 70vh;
   overflow: auto;
   position: fixed;
-  top: 25vh;
+  top: 15vh;
   left: 30%;
   background: linear-gradient(to bottom, grey, white);
   box-sizing: border-box;
