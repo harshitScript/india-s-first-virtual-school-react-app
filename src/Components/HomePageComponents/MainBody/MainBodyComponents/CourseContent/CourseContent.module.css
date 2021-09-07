@@ -10,6 +10,7 @@
   color: white;
   font-weight: bolder;
   text-decoration: underline;
+  text-transform: uppercase;
 }
 
 /* ANIMATIONS */
@@ -29,5 +30,19 @@
   100% {
     opacity: 1;
     transform: scale(1, 1);
+  }
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .headerSpan {
+    font-size: 2vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .headerSpan {
+    font-size: 2vh;
   }
 }

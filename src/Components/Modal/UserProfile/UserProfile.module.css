@@ -1,4 +1,3 @@
-
 .profileImageDiv {
   width: 100%;
   display: flex;
@@ -26,7 +25,7 @@
   box-sizing: border-box;
   padding: 1vh;
   color: var(--main-color);
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
@@ -54,9 +53,54 @@
   width: 100%;
 }
 
-.buttonContainer{
+.buttonContainer {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.logoutBtn {
+  width: 100%;
+  margin: 0vh;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .profileImageDiv > img {
+    width: 12vh;
+    height: 12vh;
+  }
+
+  .spanDiv {
+    font-size: 1.5vh;
+  }
+
+  .spanDiv > span:first-of-type {
+    font-size: 2.5vh;
+  }
+
+  .spanDiv > span:nth-child(2) {
+    font-size: 2vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .profileImageDiv > img {
+    width: 12vh;
+    height: 12vh;
+  }
+
+  .spanDiv {
+    font-size: 1.8vh;
+  }
+
+  .spanDiv > span:first-of-type {
+    font-size: 3vh;
+  }
+
+  .spanDiv > span:nth-child(2) {
+    font-size: 2.5vh;
+  }
 }

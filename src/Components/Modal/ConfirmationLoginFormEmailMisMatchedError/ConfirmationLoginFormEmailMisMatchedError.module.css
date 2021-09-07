@@ -28,3 +28,22 @@
   color: var(--main-color);
   font-size: 2vh;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .firstSpan {
+    font-size: 2vh;
+  }
+  .secondSpan {
+    font-size: 1.5vh;
+  }
+}
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .firstSpan {
+    font-size: 2.5vh;
+  }
+  .secondSpan {
+    font-size: 1.8vh;
+  }
+}

@@ -64,3 +64,32 @@
     height: 0;
   }
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .dropDownDiv > button {
+    font-size: 2vh;
+  }
+
+  .dropDownDiv > ul > li {
+    height: auto;
+    padding: 0.2vh;
+  }
+  .dropDownDiv > ul > li > a {
+    font-size: 1.5vh;
+  }
+}
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .dropDownDiv > button {
+    font-size: 2.5vh;
+  }
+
+  .dropDownDiv > ul > li {
+    height: auto;
+    padding: 0.2vh;
+  }
+  .dropDownDiv > ul > li > a {
+    font-size: 1.8vh;
+  }
+}

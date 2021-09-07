@@ -69,7 +69,6 @@ const AuthContextProvider = (props) => {
         idToken: idToken,
         loginHandler: loginHandler,
         logoutHandler: logoutHandler,
-
         updateIdToken: updateIdToken,
       }}
     >

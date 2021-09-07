@@ -4,3 +4,9 @@
   margin: 1vh auto;
 }
 
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .formCard {
+    width: 80%;
+  }
+}

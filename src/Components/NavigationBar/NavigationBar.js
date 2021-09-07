@@ -1,19 +1,27 @@
 import styles from "./NavigationBar.module.css";
 import ifvsLogo from "../../Assets/ifvslogo.jpg";
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../../Context/auth-context";
-import { BiLogOut } from "react-icons/bi";
 import { useSelector, useDispatch } from "react-redux";
 import { modalSliceActions } from "../../ReduxStore/modal-slice";
+import { AiOutlineMenu } from "react-icons/ai";
+import MobileViewNavigationList from "./MobileViewNavigationList";
 
 const NavigationBar = (props) => {
+  const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   const authCtx = useContext(AuthContext);
   const isAuthenticated = authCtx.isAuthenticated;
 
   const profileImageSrc = useSelector(
     (state) => state.userData.profileImageSrc
   );
+
+  const mobileMenuToggleHandler = () => {
+    setDisplayMobileMenu((currentDisplayMenu) => {
+      return currentDisplayMenu ? false : true;
+    });
+  };
 
   const dispatch = useDispatch();
 
@@ -22,25 +30,29 @@ const NavigationBar = (props) => {
       dispatch(modalSliceActions.displayModal({ identifier: "user-profile" }));
   };
 
-  const logoutModalDisplayHandler = () => {
-    dispatch(modalSliceActions.displayModal({ identifier: "logout" }));
-  };
-
   return (
     <>
       <div className={styles.navBarDiv}>
         <div>
-          <abbr title="India's First Virtual School">
-            <img
-              className={styles.logoImage}
-              src={ifvsLogo}
-              alt="IFVS LOGO"
-              width="50vh"
-            />
-          </abbr>
+          <div>
+            <abbr title="India's First Virtual School">
+              <img
+                className={styles.logoImage}
+                src={ifvsLogo}
+                alt="IFVS LOGO"
+                width="50vh"
+              />
+            </abbr>
 
-          <div className={styles.mainHeader}>IFVS</div>
+            <div className={styles.mainHeader}>IFVS</div>
+          </div>
+
+          <AiOutlineMenu
+            onClick={mobileMenuToggleHandler}
+            className={styles.menuIcon}
+          />
         </div>
+
         <nav>
           <ul>
             <li>
@@ -76,6 +88,7 @@ const NavigationBar = (props) => {
                 </NavLink>
               </li>
             )}
+
             <li>
               <div className={styles.profileImgContainer}>
                 <img
@@ -88,16 +101,18 @@ const NavigationBar = (props) => {
                 />
               </div>
             </li>
-            {isAuthenticated && (
-              <li>
-                <button onClick={logoutModalDisplayHandler}>
-                  Logout&nbsp;
-                  <BiLogOut />
-                </button>
-              </li>
-            )}
           </ul>
         </nav>
+
+        {/* FOR MOBILE VIEW */}
+
+        {displayMobileMenu && (
+          <MobileViewNavigationList
+            userProfileOpenHandler={userProfileOpenHandler}
+            isAuthenticated={isAuthenticated}
+            profileImageSrc={profileImageSrc}
+          />
+        )}
       </div>
     </>
   );

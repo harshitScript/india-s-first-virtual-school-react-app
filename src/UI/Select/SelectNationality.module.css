@@ -36,3 +36,63 @@
   font-size: small;
   color: red;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .formGroup > label {
+    font-size: 2vh;
+  }
+
+  .formGroup > label > span {
+    font-weight: lighter;
+    font-size: 1vh;
+  }
+
+  .formGroup > select {
+    height: 3vh;
+    font-size: small;
+    border-bottom: 0.5vh solid var(--secondary-color);
+  }
+
+  .formGroup > select:hover,
+  .formGroup > select:focus {
+    border-bottom: 0.5vh solid var(--main-color);
+  }
+
+  .formGroup > span {
+    display: block;
+    width: 100%;
+    font-size: 1.5vh;
+    color: red;
+  }
+}
+
+/*  TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .formGroup > label {
+    font-size: 2vh;
+  }
+
+  .formGroup > label > span {
+    font-weight: lighter;
+    font-size: 1vh;
+  }
+
+  .formGroup > select {
+    height: 4vh;
+    font-size: smaller;
+    border-bottom: 0.7vh solid var(--secondary-color);
+  }
+
+  .formGroup > select:hover,
+  .formGroup > select:focus {
+    border-bottom: 0.7vh solid var(--main-color);
+  }
+
+  .formGroup > span {
+    display: block;
+    width: 100%;
+    font-size: 1.7vh;
+    color: red;
+  }
+}

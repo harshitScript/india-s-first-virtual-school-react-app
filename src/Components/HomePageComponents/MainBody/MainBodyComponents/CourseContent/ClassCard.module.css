@@ -14,3 +14,25 @@
   text-align: center;
   width: 100%;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .headerSpan {
+    font-size: 1.5vh;
+  }
+
+  .subSpan {
+    font-size: 1.4vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .headerSpan {
+    font-size: 1.8vh;
+  }
+
+  .subSpan {
+    font-size: 1.7vh;
+  }
+}

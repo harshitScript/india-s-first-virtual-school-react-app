@@ -37,6 +37,10 @@ const UserProfile = (props) => {
     );
   };
 
+  const logoutModalDisplayHandler = () => {
+    dispatch(modalSliceActions.displayModal({ identifier: "logout" }));
+  };
+
   return (
     <>
       <div className={styles.profileImageDiv}>
@@ -63,6 +67,12 @@ const UserProfile = (props) => {
           Student ID
         </SimpleButton>
       </div>
+      <SimpleButton
+        onClick={logoutModalDisplayHandler}
+        className={styles.logoutBtn}
+      >
+        Logout
+      </SimpleButton>
     </>
   );
 };

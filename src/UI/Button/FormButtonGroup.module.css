@@ -16,9 +16,9 @@
   border: none;
 }
 
-.formButtonGroup > button:disabled{
-    background: linear-gradient(to right , white , grey);
-    cursor: not-allowed;
+.formButtonGroup > button:disabled {
+  background: linear-gradient(to right, white, grey);
+  cursor: not-allowed;
 }
 
 .formButtonGroup > button:hover {
@@ -36,4 +36,30 @@
   color: white;
   border-radius: 1vh;
   border: none;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .formButtonGroup > button {
+    height: 3vh;
+    font-size: small;
+  }
+
+  .formButtonGroup > div > button {
+    height: 3vh;
+    font-size: small;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .formButtonGroup > button {
+    height: 4vh;
+    font-size: smaller;
+  }
+
+  .formButtonGroup > div > button {
+    height: 4vh;
+    font-size: smaller;
+  }
 }

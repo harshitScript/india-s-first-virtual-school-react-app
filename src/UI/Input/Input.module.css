@@ -46,3 +46,53 @@
   color: var(--main-color);
   float: right;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .formGroup > label {
+    font-size: 2vh;
+  }
+
+  .formGroup > input {
+    height: 3vh;
+    font-size: small;
+    border-bottom: 0.5vh solid var(--secondary-color);
+  }
+
+  .formGroup > input:hover,
+  .formGroup > input:focus {
+    border-bottom: 0.5vh solid var(--main-color);
+  }
+
+  .flexDiv > span {
+    display: block;
+    width: 100%;
+    font-size: 1.5vh;
+    color: red;
+  }
+}
+
+/*  TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .formGroup > label {
+    font-size: 2vh;
+  }
+
+  .formGroup > input {
+    height: 4vh;
+    font-size: smaller;
+    border-bottom: 0.7vh solid var(--secondary-color);
+  }
+
+  .formGroup > input:hover,
+  .formGroup > input:focus {
+    border-bottom: 0.7vh solid var(--main-color);
+  }
+
+  .flexDiv > span {
+    display: block;
+    width: 100%;
+    font-size: 1.7vh;
+    color: red;
+  }
+}

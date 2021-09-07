@@ -11,3 +11,17 @@
 .loadingOrErrorCard {
   text-align: center;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .headerSpan {
+    font-size: 2vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .headerSpan {
+    font-size: 2vh;
+  }
+}

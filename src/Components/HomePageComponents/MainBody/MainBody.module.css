@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding: 1vh;
   height: fit-content;
-  
 }
 .leftDiv {
   width: 25%;
@@ -23,9 +22,24 @@
   float: left;
 }
 
-/* MEDIA QUERIES */
+/* MOBILE VIEW */
+@media screen and (max-width: 1024px) {
+  .leftDiv {
+    width: 100%;
+  }
 
-@media screen and (max-width: 828px) {
+  .centerDiv {
+    width: 100%;
+  }
+
+  .rightDiv {
+    width: 100%;
+  }
+}
+
+/* TABLET VIEW */
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
   .leftDiv {
     width: 100%;
   }

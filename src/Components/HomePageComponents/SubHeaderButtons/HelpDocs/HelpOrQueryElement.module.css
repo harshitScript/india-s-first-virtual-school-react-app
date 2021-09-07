@@ -11,3 +11,29 @@
   color: var(--secondary-color);
   font-size: small;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .deatilsCard > summary {
+    color: var(--main-color);
+    font-size: 1.5vh;
+  }
+
+  .deatilsCard > p {
+    color: var(--secondary-color);
+    font-size: 1.4vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .deatilsCard > summary {
+    color: var(--main-color);
+    font-size: 1.8vh;
+  }
+
+  .deatilsCard > p {
+    color: var(--secondary-color);
+    font-size: 1.7vh;
+  }
+}

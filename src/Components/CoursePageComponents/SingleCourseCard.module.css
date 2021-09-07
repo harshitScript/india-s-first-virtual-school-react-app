@@ -27,7 +27,21 @@
   width: 40%;
 }
 
-.singleCourseCard > div > button:hover{
-    background-color: white;
-    color: var(--main-color);
+.singleCourseCard > div > button:hover {
+  background-color: white;
+  color: var(--main-color);
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .singleCourseCard > span {
+    font-size: 1.7vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .singleCourseCard > span {
+    font-size: 2vh;
+  }
 }

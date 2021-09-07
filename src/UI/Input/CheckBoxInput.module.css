@@ -9,3 +9,17 @@
   display: block;
   text-align: center;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .formGroup > label {
+    font-size: 2vh;
+  }
+}
+
+/* TBALET VIEW  */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .formGroup > label {
+    font-size: 2vh;
+  }
+}

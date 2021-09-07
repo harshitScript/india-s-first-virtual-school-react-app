@@ -11,13 +11,18 @@
   background-color: var(--main-color);
 }
 
-@media screen and (max-width: 828px) {
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
   .subBodyDiv > div {
     width: 50%;
-    box-sizing: border-box;
-    padding: 1vh;
-    height: 30vh;
-    float: left;
-    background-color: var(--main-color);
+    height: 25vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .subBodyDiv > div {
+    width: 50%;
+    height: 28vh;
   }
 }

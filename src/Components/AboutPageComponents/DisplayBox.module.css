@@ -29,3 +29,17 @@
     transform: scale(1, 1);
   }
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .displayBoxCard {
+    width: 90%;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .displayBoxCard {
+    width: 60%;
+  }
+}

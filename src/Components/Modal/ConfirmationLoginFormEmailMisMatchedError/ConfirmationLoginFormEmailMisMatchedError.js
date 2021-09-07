@@ -1,6 +1,5 @@
 import styles from "./ConfirmationLoginFormEmailMisMatchedError.module.css";
 import { BiErrorAlt } from "react-icons/bi";
-
 const ConfirmationLoginFormEmailMisMatchedError = () => {
   return (
     <>

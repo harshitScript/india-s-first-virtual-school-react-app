@@ -16,7 +16,7 @@ const SubBody = () => {
         <ContactUs />
       </div>
       <div>
-       <Feedback />
+        <Feedback />
       </div>
     </div>
   );

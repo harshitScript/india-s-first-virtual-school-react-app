@@ -10,3 +10,16 @@
   text-decoration: underline;
   text-transform: uppercase;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .headerSpan {
+    font-size: 3vh;
+  }
+}
+/* TBALET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .headerSpan {
+    font-size: 3.5vh;
+  }
+}

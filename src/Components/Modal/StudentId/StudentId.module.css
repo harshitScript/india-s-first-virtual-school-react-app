@@ -34,3 +34,41 @@
   color: var(--main-color);
   text-transform: uppercase;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .firstSpan {
+    font-size: 1.5vh;
+  }
+
+  .secondSpan {
+    font-size: 2vh;
+  }
+
+  .thirdSpan {
+    font-size: 1vh;
+  }
+
+  .fourthSpan {
+    font-size: 1.3vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .firstSpan {
+    font-size: 1.8vh;
+  }
+
+  .secondSpan {
+    font-size: 2.5vh;
+  }
+
+  .thirdSpan {
+    font-size: 1.5vh;
+  }
+
+  .fourthSpan {
+    font-size: 1.7vh;
+  }
+}

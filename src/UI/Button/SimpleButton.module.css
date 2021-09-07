@@ -7,6 +7,22 @@
   color: white;
 }
 
-.simpleButton:hover{
-    background:var(--secondary-color) ;
+.simpleButton:hover {
+  background: var(--secondary-color);
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .simpleButton {
+    height: 3vh;
+    font-size: small;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .simpleButton {
+    height: 4vh;
+    font-size: smaller;
+  }
 }

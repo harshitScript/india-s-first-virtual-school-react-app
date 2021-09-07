@@ -1,0 +1,32 @@
+.mobileViewDiv {
+  display: none;
+  width: 100%;
+  background-color: var(--main-color);
+}
+
+.mobileViewUnOrderedList > li {
+  list-style-type: none;
+  margin-bottom: 1vh;
+  color: white;
+  font-size: 2.5vh;
+  font-weight: 500;
+}
+.mobileViewUnOrderedList > li > a {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5vh;
+  font-weight: 500;
+}
+
+.mobileViewProfileImg {
+  border-radius: 1vh;
+  box-shadow: 0 0 1vh black;
+  margin-left: 0.8vh;
+}
+
+/* FIT FOR TABLET AND PHONE ALSO */
+@media screen and (max-width: 1024px) {
+  .mobileViewDiv {
+    display: block;
+  }
+}

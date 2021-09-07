@@ -327,6 +327,7 @@ const FormCard = (props) => {
             });
         })
         .catch((error) => {
+          
           setError(true);
           setLoading(false);
           dispatch(

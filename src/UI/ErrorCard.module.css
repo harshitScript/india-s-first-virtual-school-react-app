@@ -11,3 +11,24 @@
   color: var(--main-color);
   border-radius: 0.5vh 0.5vh 0.5vh 0.5vh;
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .errorMsgSpan {
+    font-size: 1.5vh;
+  }
+  .refreshBtn {
+    height: 3vh;
+    font-size: small;
+  }
+}
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .errorMsgSpan {
+    font-size: 2vh;
+  }
+  .refreshBtn {
+    height: 4vh;
+    font-size: smaller;
+  }
+}

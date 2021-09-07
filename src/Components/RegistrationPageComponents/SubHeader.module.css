@@ -1,9 +1,22 @@
-.subHeader{
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 3vh;
-    color: var(--main-color);
-    font-weight: bolder;
-    text-transform: uppercase;
+.subHeader {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 3vh;
+  color: var(--main-color);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+/* MEDIA VIEW */
+@media screen and (max-width: 500px) {
+  .subHeader {
+    font-size: 2.5vh;
+  }
+}
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .subHeader {
+    font-size: 2.7vh;
+  }
 }

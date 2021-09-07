@@ -10,11 +10,26 @@
   background-color: var(--secondary-color);
 }
 
+/* MOBILE VIEW */
 @media screen and (max-width: 500px) {
   .btnConatinerDiv > button {
     width: 100%;
-    background-color:var(--main-color);
+    background-color: var(--main-color);
     color: white;
-    font-weight: bolder;
+    font-weight: 500;
+    font-size: 1.7vh;
+    height: 4vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .btnConatinerDiv > button {
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 500;
+    font-size: 2vh;
+    height: 4vh;
   }
 }

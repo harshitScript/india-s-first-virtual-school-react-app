@@ -7,6 +7,7 @@
   font-weight: bolder;
   box-sizing: border-box;
   padding: 2vh;
+  text-transform: uppercase;
 }
 
 .subTextSpan {
@@ -20,4 +21,26 @@
 .icon {
   color: white;
   margin: 0.5vh;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+}
+.headerSpan {
+  font-size: 2vh;
+}
+
+.subTextSpan {
+  font-size: 1.8vh;
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .headerSpan {
+    font-size: 2vh;
+  }
+
+  .subTextSpan {
+    font-size: 1.8vh;
+  }
 }

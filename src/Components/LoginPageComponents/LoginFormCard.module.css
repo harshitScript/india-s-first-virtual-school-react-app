@@ -69,3 +69,55 @@
     transform: scale(1, 1);
   }
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .formCard {
+    width: 70%;
+  }
+
+  .formGroup > input {
+    height: 3vh;
+    font-size: small;
+    border-bottom: 0.5vh solid var(--secondary-color);
+  }
+
+  .formGroup > button {
+    height: 3vh;
+    font-size: 1.5vh;
+  }
+
+  .newUserButtonDiv > span {
+    font-size: 1.5vh;
+  }
+
+  .infoText {
+    font-size: 1.3vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .formCard {
+    width: 60%;
+  }
+
+  .formGroup > input {
+    height: 4vh;
+    font-size: smaller;
+    border-bottom: 0.7vh solid var(--secondary-color);
+  }
+
+  .formGroup > button {
+    height: 4vh;
+    font-size: 1.7vh;
+  }
+
+  .newUserButtonDiv > span {
+    font-size: 1.8vh;
+  }
+
+  .infoText {
+    font-size: 1.5vh;
+  }
+}

@@ -11,11 +11,11 @@
 .modal {
   z-index: 100;
   width: 40%;
-  min-height: 20vh;
-  max-height: 70vh;
+  min-height: 10vh;
+  max-height: 80vh;
   overflow: auto;
   position: fixed;
-  top: 15vh;
+  top: 10vh;
   left: 30%;
   background: linear-gradient(to bottom, grey, white);
   box-sizing: border-box;
@@ -28,12 +28,6 @@
   justify-content: flex-end;
   color: red;
   cursor: pointer;
-}
-
-.notFoundSpan {
-  display: block;
-  width: 100%;
-  text-align: center;
 }
 
 .modalEnter {
@@ -55,5 +49,23 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .modal {
+    width: 80%;
+    top: 10vh;
+    left: 10%;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .modal {
+    width: 70%;
+    top: 10vh;
+    left: 15%;
   }
 }

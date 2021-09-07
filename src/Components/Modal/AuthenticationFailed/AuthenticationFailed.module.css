@@ -21,3 +21,17 @@
   transform: rotate(360deg);
 }
 
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .firstSpan {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+}

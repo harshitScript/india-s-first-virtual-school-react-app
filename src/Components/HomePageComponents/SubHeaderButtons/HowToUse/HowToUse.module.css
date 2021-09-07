@@ -11,3 +11,27 @@
 .orderedList > li {
   color: var(--main-color);
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .headerSpan {
+    font-size: 2vh;
+  }
+
+  .orderedList > li {
+    color: var(--main-color);
+    font-size: 1.5vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .headerSpan {
+    font-size: 2vh;
+  }
+
+  .orderedList > li {
+    color: var(--main-color);
+    font-size: 1.8vh;
+  }
+}

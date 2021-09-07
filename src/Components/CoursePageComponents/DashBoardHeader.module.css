@@ -47,3 +47,32 @@
     transform: scale(1, 1);
   }
 }
+
+/*   MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .dashBoardFlexCard {
+    width: 90%;
+  }
+
+  .firstSpan {
+    font-size: 2vh;
+  }
+
+  .secondSpan {
+    font-size: 1.5vh;
+  }
+}
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .dashBoardFlexCard {
+    width: 70%;
+  }
+
+  .firstSpan {
+    font-size: 3vh;
+  }
+
+  .secondSpan {
+    font-size: 1.8vh;
+  }
+}

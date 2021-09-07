@@ -15,3 +15,27 @@
   font-size: 1.7vh;
   color: var(--secondary-color);
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .detailsTag > summary {
+    font-size: 1.5vh;
+  }
+
+  .detailsTag > ol > li {
+    font-size: 1.3vh;
+    color: var(--secondary-color);
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .detailsTag > summary {
+    font-size: 1.8vh;
+  }
+
+  .detailsTag > ol > li {
+    font-size: 1.6vh;
+    color: var(--secondary-color);
+  }
+}

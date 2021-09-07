@@ -7,3 +7,25 @@
 .list > li {
   color: var(--main-color);
 }
+
+/* MOBILE VIEW */
+@media screen and (max-width: 500px) {
+  .headerSpan {
+    font-size: 1.5vh;
+  }
+
+  .list > li {
+    font-size: 1.4vh;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .headerSpan {
+    font-size: 1.8vh;
+  }
+
+  .list > li {
+    font-size: 1.7vh;
+  }
+}
