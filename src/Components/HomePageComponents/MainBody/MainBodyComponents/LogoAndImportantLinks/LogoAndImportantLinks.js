@@ -18,7 +18,7 @@ const LogoAndImportantLinks = () => {
 
   return (
     <Card className={styles.cardWidth}>
-      <span className={styles.impLinksSpan}>links</span>
+      <span className={styles.impLinksSpan}>Important links</span>
 
       <div className={styles.logoImage}>
         <img src={ifvsLogo} loading="lazy" alt="ifvs logo" width="50%" />
