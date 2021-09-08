@@ -83,6 +83,18 @@
   .spanDiv > span:nth-child(2) {
     font-size: 2vh;
   }
+
+  .buttonContainer {
+    display: block;
+  }
+
+  .buttonContainer > button {
+    display: block;
+    width: 60%;
+    margin: 1vh auto;
+    height: 2.2vh;
+    font-size: 1vh;
+  }
 }
 
 /* TABLET VIEW */
