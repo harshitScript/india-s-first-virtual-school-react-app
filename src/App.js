@@ -19,7 +19,7 @@ import LoadingPageFallbackJSX from "./UI/LoadingPageFallbackJSX";
 //import CoursePage from "./Pages/CoursePage/CoursePage";
 //import ChangeEmailPasswordPage from "./Pages/ChangeEmailPasswordPage/ChangeEmailPasswordPage";
 
-// LAZY LOADING IMPORTS.
+// LAZY LOADING IMPORT
 const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("./Pages/AboutPage/AboutPage"));
 const NotFoundPage = lazy(() => import("./Pages/NotFoundPage/NotFoundPage"));

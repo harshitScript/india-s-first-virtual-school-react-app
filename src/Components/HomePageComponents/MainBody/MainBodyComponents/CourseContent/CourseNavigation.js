@@ -7,7 +7,7 @@ const CourseNavigation = () => {
       <NavLink to={`${match.path}/primary`}>Primary</NavLink>
       <NavLink to={`${match.path}/middle`}>Middle</NavLink>
       <NavLink to={`${match.path}/secondary`}>Secondary</NavLink>
-      <NavLink to={`${match.path}/senior-secondary`}>Senior-Secondary</NavLink>
+      <NavLink to={`${match.path}/senior-secondary`}>Senior</NavLink>
     </div>
   );
 };
