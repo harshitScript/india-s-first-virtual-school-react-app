@@ -1,21 +1,39 @@
 // APP COMPONENT RENDERED EACHB TIME THE ROUTE CHANGES ,  NO MATTER ITS MAIN ROUTE OR SUB ROUTE.
 
+import { lazy, Suspense } from "react";
 import "./App.css";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
-import HomePage from "./Pages/HomePage/HomePage";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
-import AboutPage from "./Pages/AboutPage/AboutPage";
-import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
-import ClassDetailsPage from "./Pages/ClassDetailsPage/ClassDetailsPage";
-//import { CSSTransition, TransitionGroup } from "react-transition-group";
-import LoginPage from "./Pages/LoginPage/LoginPage";
 import { useContext } from "react";
 import AuthContext from "./Context/auth-context";
-import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
 import Footer from "./UI/Footer";
 import Modal from "./Components/Modal/Modal";
-import CoursePage from "./Pages/CoursePage/CoursePage";
-import ChangeEmailPasswordPage from "./Pages/ChangeEmailPasswordPage/ChangeEmailPasswordPage";
+import LoadingPageFallbackJSX from "./UI/LoadingPageFallbackJSX";
+//import HomePage from "./Pages/HomePage/HomePage";
+//import AboutPage from "./Pages/AboutPage/AboutPage";
+//import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
+//import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
+//import ClassDetailsPage from "./Pages/ClassDetailsPage/ClassDetailsPage";
+//import { CSSTransition, TransitionGroup } from "react-transition-group";
+//import LoginPage from "./Pages/LoginPage/LoginPage";
+//import CoursePage from "./Pages/CoursePage/CoursePage";
+//import ChangeEmailPasswordPage from "./Pages/ChangeEmailPasswordPage/ChangeEmailPasswordPage";
+
+// LAZY LOADING IMPORTS.
+const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
+const AboutPage = lazy(() => import("./Pages/AboutPage/AboutPage"));
+const NotFoundPage = lazy(() => import("./Pages/NotFoundPage/NotFoundPage"));
+const LoginPage = lazy(() => import("./Pages/LoginPage/LoginPage"));
+const ClassDetailsPage = lazy(() =>
+  import("./Pages/ClassDetailsPage/ClassDetailsPage")
+);
+const RegistrationPage = lazy(() =>
+  import("./Pages/RegistrationPage/RegistrationPage")
+);
+const CoursePage = lazy(() => import("./Pages/CoursePage/CoursePage"));
+const ChangeEmailPasswordPage = lazy(() =>
+  import("./Pages/ChangeEmailPasswordPage/ChangeEmailPasswordPage")
+);
 
 function App() {
   const location = useLocation();
@@ -56,43 +74,45 @@ function App() {
             exitDone: "",
           }}
         >*/}
-      <Switch location={location}>
-        <Route path="/" exact>
-          <Redirect to="/home-page" />
-        </Route>
-        <Route path="/home-page">
-          <HomePage />
-        </Route>
-        <Route path="/about-page">
-          <AboutPage />
-        </Route>
-        <Route path="/class-details/:classGroup/:standard">
-          <ClassDetailsPage />
-        </Route>
-        <Route path="/login-page">
-          {isAuthenticated ? <Redirect to="/home-page" /> : <LoginPage />}
-        </Route>
-        <Route path="/register-user-page">
-          {isAuthenticated ? (
+      <Suspense fallback={<LoadingPageFallbackJSX />}>
+        <Switch location={location}>
+          <Route path="/" exact>
             <Redirect to="/home-page" />
-          ) : (
-            <RegistrationPage />
-          )}
-        </Route>
-        <Route path="/course-page">
-          {isAuthenticated ? <CoursePage /> : <Redirect to="/home-page" />}
-        </Route>
-        <Route path="/change-email-password-page">
-          {isAuthenticated ? (
-            <ChangeEmailPasswordPage />
-          ) : (
-            <Redirect to="/home-page" />
-          )}
-        </Route>
-        <Route path="*">
-          <NotFoundPage />
-        </Route>
-      </Switch>
+          </Route>
+          <Route path="/home-page">
+            <HomePage />
+          </Route>
+          <Route path="/about-page">
+            <AboutPage />
+          </Route>
+          <Route path="/class-details/:classGroup/:standard">
+            <ClassDetailsPage />
+          </Route>
+          <Route path="/login-page">
+            {isAuthenticated ? <Redirect to="/home-page" /> : <LoginPage />}
+          </Route>
+          <Route path="/register-user-page">
+            {isAuthenticated ? (
+              <Redirect to="/home-page" />
+            ) : (
+              <RegistrationPage />
+            )}
+          </Route>
+          <Route path="/course-page">
+            {isAuthenticated ? <CoursePage /> : <Redirect to="/home-page" />}
+          </Route>
+          <Route path="/change-email-password-page">
+            {isAuthenticated ? (
+              <ChangeEmailPasswordPage />
+            ) : (
+              <Redirect to="/home-page" />
+            )}
+          </Route>
+          <Route path="*">
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </Suspense>
 
       {/*</CSSTransition>
       </TransitionGroup>*/}

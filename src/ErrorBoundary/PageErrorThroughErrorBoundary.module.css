@@ -1,0 +1,25 @@
+.flexDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 60%;
+  background: white;
+}
+
+.unexpectedTextSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--main-color);
+}
+
+.refreshTextSpan {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--main-color);
+  font-size: small;
+}
