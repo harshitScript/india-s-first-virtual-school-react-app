@@ -1,20 +1,45 @@
 import styles from "./LogoAndImportantLinks.module.css";
 import Card from "../../../../../UI/Card";
 import ifvsLogo from "../../../../../Assets/ifvslogo.jpg";
-import ImpLinkObj from "../../../../../DataModels/imp-links";
+import { useDispatch } from "react-redux";
+import importantLinksFetcherThunk from "../../../../../ReduxStore/important-links-slice-fetcher-thunk";
 import ImpLinkCard from "./ImpLinkCard";
+import { useSelector } from "react-redux";
+import { useCallback, useEffect } from "react";
+import LoadingCard from "../../../../../UI/LoadingCard";
+import ErrorCard from "../../../../../UI/ErrorCard";
 
 const LogoAndImportantLinks = () => {
-  const impLinksList = [
-    new ImpLinkObj(Math.random().toFixed(3), "Imp-Link 1", "#"),
-    new ImpLinkObj(Math.random().toFixed(3), "Imp-Link 2", "#"),
-    new ImpLinkObj(Math.random().toFixed(3), "Imp-Link 3", "#"),
-    new ImpLinkObj(Math.random().toFixed(3), "Imp-Link 4", "#"),
-  ];
+  const dispatch = useDispatch();
 
-  const impLinksCards = impLinksList.map((linkObj) => (
+  const [importantLinks, loading, error] = useSelector((state) => [
+    state.importantLinks.importantLinks,
+    state.importantLinks.loading,
+    state.importantLinks.error,
+  ]);
+
+  const importantLinksFetcherThunkHandler = useCallback(() => {
+    dispatch(importantLinksFetcherThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    importantLinksFetcherThunkHandler();
+  }, [importantLinksFetcherThunkHandler]);
+
+  let contentToDisplay = importantLinks.map((linkObj) => (
     <ImpLinkCard key={linkObj.id} title={linkObj.title} href={linkObj.href} />
   ));
+  if (loading) {
+    contentToDisplay = <LoadingCard className={styles.loadingAndErrorCard} />;
+  }
+  if (error) {
+    contentToDisplay = (
+      <ErrorCard
+        refreshHandler={importantLinksFetcherThunkHandler}
+        className={styles.loadingAndErrorCard}
+      />
+    );
+  }
 
   return (
     <Card className={styles.cardWidth}>
@@ -24,7 +49,7 @@ const LogoAndImportantLinks = () => {
         <img src={ifvsLogo} loading="lazy" alt="ifvs logo" width="50%" />
       </div>
 
-      {impLinksCards}
+      {contentToDisplay}
     </Card>
   );
 };

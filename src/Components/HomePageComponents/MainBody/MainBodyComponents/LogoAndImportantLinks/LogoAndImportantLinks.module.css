@@ -26,6 +26,11 @@
   text-align: center;
 }
 
+.loadingAndErrorCard{
+  align-items: center;
+  margin:1vh;
+}
+
 /* ANIMATIONS */
 
 @keyframes logoAndImpLinksMount {

@@ -5,6 +5,7 @@ import helpDocsSlice from "./help-docs-slice";
 import aboutUsSlice from "./about-us-slice";
 import userDataObjectSlice from "./user-data-object-slice";
 import modalSlice from "./modal-slice";
+import importantLinksSlice from "./important-links-slice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     aboutUs: aboutUsSlice.reducer,
     userData: userDataObjectSlice.reducer,
     modal: modalSlice.reducer,
+    importantLinks: importantLinksSlice.reducer,
   },
 });
 
