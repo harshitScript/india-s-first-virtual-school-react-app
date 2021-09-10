@@ -9,6 +9,7 @@ import AuthContext from "./Context/auth-context";
 import Footer from "./UI/Footer";
 import Modal from "./Components/Modal/Modal";
 import LoadingPageFallbackJSX from "./UI/LoadingPageFallbackJSX";
+import EditPersonalDetailsPage from "./Pages/EditPersonalDetailsPage/EditPersonalDetailsPage";
 //import HomePage from "./Pages/HomePage/HomePage";
 //import AboutPage from "./Pages/AboutPage/AboutPage";
 //import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
@@ -104,6 +105,13 @@ function App() {
           <Route path="/change-email-password-page">
             {isAuthenticated ? (
               <ChangeEmailPasswordPage />
+            ) : (
+              <Redirect to="/home-page" />
+            )}
+          </Route>
+          <Route path="/edit-personal-details-page">
+            {isAuthenticated ? (
+              <EditPersonalDetailsPage />
             ) : (
               <Redirect to="/home-page" />
             )}

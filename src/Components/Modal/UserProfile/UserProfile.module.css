@@ -60,9 +60,10 @@
   justify-content: center;
 }
 
-.logoutBtn {
+.fullLengthBtn {
   width: 100%;
   margin: 0vh;
+  margin-bottom: 1vh;
 }
 
 /* MOBILE VIEW */

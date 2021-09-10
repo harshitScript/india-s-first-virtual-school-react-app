@@ -133,6 +133,7 @@ const ChangeEmailPasswordFormCard = () => {
         inputType="email"
         errorMsg="Enter a valid email."
         id="STD_NEW_EMAIL"
+        requestType="POST"
         payloadObjectGenerator={emailPayloadObjectGenerator}
         addtionalFunctionalityOnSucess={emailSucessHandler}
         addtionalFunctionalityOnError={emailChangeErrorHandler}
@@ -145,6 +146,7 @@ const ChangeEmailPasswordFormCard = () => {
         inputType={passwordType}
         errorMsg="Enter a valid password."
         id="STD_NEW_PASSWORD"
+        requestType="POST"
         payloadObjectGenerator={passwordPayloadObjectGenerator}
         addtionalFunctionalityOnSucess={passwordSucessHandler}
         passwordDisplayIcon={true}

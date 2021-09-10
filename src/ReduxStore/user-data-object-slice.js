@@ -25,6 +25,7 @@ const userDataObjectSlice = createSlice({
           comment: action.payload.userDataObj[key].comment,
           //confirmedPassword: action.payload.userDataObj[key].confirmedPassword,
           contact: action.payload.userDataObj[key].contact,
+          countryCode: action.payload.userDataObj[key].countryCode,
           dateOfBirth: action.payload.userDataObj[key].dateOfBirth,
           email: action.payload.userDataObj[key].email,
           fatherName: action.payload.userDataObj[key].fatherName,

@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import styles from "./EmailPasswordChangeSuccessfull.module.css";
+import styles from "./SomeDetailChangedSuccessfull.module.css";
 import { FaThumbsUp } from "react-icons/fa";
 
-const EmailPasswordChangeSuccessfull = () => {
+const SomeDetailChangedSuccessfull = () => {
   const whatIsChanged = useSelector(
     (state) => state.modal.additionalPayload.whatIsChanged
   );
@@ -15,4 +15,4 @@ const EmailPasswordChangeSuccessfull = () => {
     </>
   );
 };
-export default EmailPasswordChangeSuccessfull;
+export default SomeDetailChangedSuccessfull;

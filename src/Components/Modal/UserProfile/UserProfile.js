@@ -41,6 +41,11 @@ const UserProfile = (props) => {
     dispatch(modalSliceActions.displayModal({ identifier: "logout" }));
   };
 
+  const editPersonalDetailsPageOpener = () => {
+    dispatch(modalSliceActions.hideModal());
+    history.push("/edit-personal-details-page");
+  };
+
   return (
     <>
       <div className={styles.profileImageDiv}>
@@ -68,8 +73,14 @@ const UserProfile = (props) => {
         </SimpleButton>
       </div>
       <SimpleButton
+        className={styles.fullLengthBtn}
+        onClick={editPersonalDetailsPageOpener}
+      >
+        Edit Details
+      </SimpleButton>
+      <SimpleButton
         onClick={logoutModalDisplayHandler}
-        className={styles.logoutBtn}
+        className={styles.fullLengthBtn}
       >
         Logout
       </SimpleButton>

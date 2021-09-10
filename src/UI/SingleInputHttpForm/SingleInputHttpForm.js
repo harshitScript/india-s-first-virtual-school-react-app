@@ -20,6 +20,7 @@ const SingleInputHttpForm = (props) => {
     errorMsg,
     formType,
     id,
+    requestType,
     addtionalFunctionalityOnSucess,
     addtionalFunctionalityOnError,
     passwordDisplayIcon,
@@ -37,24 +38,45 @@ const SingleInputHttpForm = (props) => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     if (valueIsValid) {
-      setLoading(true);
-      setError(false);
-      axios
-        .post(url, payloadObjectGenerator(enteredValue))
-        .then((responseObj) => {
-          const onSuccess = () => {
+      if (requestType === "POST") {
+        setLoading(true);
+        setError(false);
+        axios
+          .post(url, payloadObjectGenerator(enteredValue))
+          .then((responseObj) => {
+            const onSuccess = () => {
+              setLoading(false);
+              setError(false);
+              inputRef.current.value = "";
+            };
+
+            addtionalFunctionalityOnSucess(enteredValue, onSuccess);
+          })
+          .catch((error) => {
+            setLoading(false);
+            setError(true);
+            addtionalFunctionalityOnError();
+          });
+      }
+
+      if (requestType === "PUT") {
+        setLoading(true);
+        setError(false);
+        axios
+          .put(url, payloadObjectGenerator(enteredValue))
+          .then((responseObj) => {
             setLoading(false);
             setError(false);
             inputRef.current.value = "";
-          };
+            addtionalFunctionalityOnSucess(enteredValue);
+          })
+          .catch((error) => {
+            setLoading(false);
+            setError(true);
 
-          addtionalFunctionalityOnSucess(enteredValue, onSuccess);
-        })
-        .catch((error) => {
-          setLoading(false);
-          setError(true);
-          addtionalFunctionalityOnError();
-        });
+            addtionalFunctionalityOnError();
+          });
+      }
     }
   };
 

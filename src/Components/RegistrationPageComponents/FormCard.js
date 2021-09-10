@@ -281,6 +281,7 @@ const FormCard = (props) => {
       photoURL: URL.createObjectURL(enteredPhotoObj),
       idURL: URL.createObjectURL(enteredIDObj),
       contact: `${enteredCountryCode}${enteredContact}`,
+      countryCode: enteredCountryCode,
       comment: commentPattern.test(enteredComment) ? enteredComment : "",
     };
 
@@ -327,7 +328,6 @@ const FormCard = (props) => {
             });
         })
         .catch((error) => {
-          
           setError(true);
           setLoading(false);
           dispatch(

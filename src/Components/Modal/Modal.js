@@ -12,7 +12,7 @@ import AddUserError from "./AddUserError/AddUserError";
 import CSSTransitionUI from "../../UI/CSSTransitionUI/CSSTransitionUI";
 import FeedbackSuccesfull from "./FeedbackSuccesfull/FeedbackSuccesfull";
 import FeedbackError from "./FeedbackError/FeedbackError";
-import EmailPasswordChangeSuccessfull from "./EmailPasswordChangeSucessFull/EmailPasswordChangeSuccessfull";
+import SomeDetailChangedSuccessfull from "./SomeDetailChangedSuccessfull/SomeDetailChangedSuccessfull";
 import UnknownError from "./UnknownError/UnknownError";
 import ConfirmationLoginFormEmailMisMatchedError from "./ConfirmationLoginFormEmailMisMatchedError/ConfirmationLoginFormEmailMisMatchedError";
 
@@ -48,10 +48,13 @@ const Modal = (props) => {
     contentToDisplay = <FeedbackError />;
   }
   if (modalType === "email-changed-success") {
-    contentToDisplay = <EmailPasswordChangeSuccessfull />;
+    contentToDisplay = <SomeDetailChangedSuccessfull />;
   }
   if (modalType === "password-changed-success") {
-    contentToDisplay = <EmailPasswordChangeSuccessfull />;
+    contentToDisplay = <SomeDetailChangedSuccessfull />;
+  }
+  if (modalType === "profile-edit-sucessfully") {
+    contentToDisplay = <SomeDetailChangedSuccessfull />;
   }
   if (modalType === "email-change-error") {
     contentToDisplay = <UnknownError />;
@@ -64,6 +67,9 @@ const Modal = (props) => {
   }
   if (modalType === "confirmation-login-form-email-mismatched") {
     contentToDisplay = <ConfirmationLoginFormEmailMisMatchedError />;
+  }
+  if (modalType === "detail-change-failed") {
+    contentToDisplay = <UnknownError />;
   }
 
   const modalHideHandler = () => {
