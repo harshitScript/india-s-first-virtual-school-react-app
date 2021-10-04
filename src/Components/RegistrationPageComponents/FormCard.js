@@ -17,6 +17,10 @@ import SelectCountryCode from "../../UI/Select/SelectCountryCode";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { modalSliceActions } from "../../ReduxStore/modal-slice";
+import {
+  profilePictureDownloadThunkHandler,
+  profilePictureUploadThunkHandler,
+} from "../../ReduxStore/profile-picture-thunk-handler";
 
 const namePattern = /^[a-zA-Z]{4,}$/;
 const datePattern = /^(19|20)[0-9]{2}-[0-1][0-9]-[0-3][0-9]$/;
@@ -301,7 +305,7 @@ const FormCard = (props) => {
         .then((responseObj) => {
           const studentId = responseObj.data.name;
 
-          //ADDING NEW USER
+          //ADDING NEW USER TO AUTHENTICATION
           axios
             .post(
               "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDxDe5NBOX90FK4vmxhFxedti1ovtRNdUQ",
@@ -314,6 +318,29 @@ const FormCard = (props) => {
                   studentId: studentId,
                 })
               );
+
+              // UPLOADING THE IMAGE
+              dispatch(
+                profilePictureUploadThunkHandler(
+                  enteredPhotoObj,
+                  enteredEmail,
+                  () => {
+                    if (
+                      window.confirm(
+                        "Image cannot be uploaded, retry recommended."
+                      )
+                    ) {
+                      dispatch(
+                        profilePictureDownloadThunkHandler(
+                          enteredPhotoObj,
+                          enteredEmail
+                        )
+                      );
+                    }
+                  }
+                )
+              );
+
               history.replace("/login-page");
             })
             .catch((error) => {

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { userDataObjectSliceActions } from "../ReduxStore/user-data-object-slice";
 import userDataObjectSliceThunk from "../ReduxStore/user-data-object-thunk";
+import { profilePictureDownloadThunkHandler } from "../ReduxStore/profile-picture-thunk-handler";
+import { profilePictureSliceActions } from "../ReduxStore/profile-picture-slice";
 
 const AuthContextProvider = (props) => {
   // HOOKS
@@ -13,6 +15,14 @@ const AuthContextProvider = (props) => {
   const currentAuthorizedEmailIfAvailable = localStorage.getItem(
     "currentAuthorizedEmail"
   );
+  const profilePictureSrcIfAvailable =
+    localStorage.getItem("profilePictureSrc");
+
+  if (profilePictureSrcIfAvailable) {
+    dispatch(
+      profilePictureSliceActions.setProfilePicture(profilePictureSrcIfAvailable)
+    );
+  }
 
   let initialIdTokenState;
   let initialIsAuthenticatedState;
@@ -46,6 +56,7 @@ const AuthContextProvider = (props) => {
     localStorage.setItem("idToken", idToken);
     localStorage.setItem("currentAuthorizedEmail", currentActiveEmail); // SETTING LOCAL STORAGE TO KNOW THE ACTIVE EMAIL.
     dispatch(userDataObjectSliceThunk(currentActiveEmail)); //FETCH THE USER DATA BASED ON EMAIL.
+    dispatch(profilePictureDownloadThunkHandler(currentActiveEmail)); //PROFILE PICTURE DOWNLOAD
   };
 
   const logoutHandler = () => {
@@ -56,6 +67,8 @@ const AuthContextProvider = (props) => {
     dispatch(
       userDataObjectSliceActions.setUserDataAndCurrentUserAndProfileImageToEmpty()
     );
+    localStorage.removeItem("profilePictureSrc");
+    dispatch(profilePictureSliceActions.removeProfilePicture());
   };
 
   const updateIdToken = (newIdToken) => {

@@ -8,7 +8,7 @@ import { modalSliceActions } from "../../../ReduxStore/modal-slice";
 const UserProfile = (props) => {
   const [currentUserObject, profileImageSrc] = useSelector((state) => [
     state.userData.currentUserObject,
-    state.userData.profileImageSrc,
+    state.profilePicture.profilePictureSrc,
   ]);
   const dispatch = useDispatch();
   const history = useHistory();

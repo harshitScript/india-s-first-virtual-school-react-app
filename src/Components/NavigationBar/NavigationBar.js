@@ -14,7 +14,7 @@ const NavigationBar = (props) => {
   const isAuthenticated = authCtx.isAuthenticated;
 
   const profileImageSrc = useSelector(
-    (state) => state.userData.profileImageSrc
+    (state) => state.profilePicture.profilePictureSrc
   );
 
   const mobileMenuToggleHandler = () => {

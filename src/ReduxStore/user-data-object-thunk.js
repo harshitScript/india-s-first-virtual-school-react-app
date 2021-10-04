@@ -1,6 +1,7 @@
 import axios from "axios";
 import { userDataObjectSliceActions } from "./user-data-object-slice";
 
+
 const userDataObjectSliceThunk = (currentEmail) => {
   return (dispatch) => {
     dispatch(userDataObjectSliceActions.setLoadingTrue());

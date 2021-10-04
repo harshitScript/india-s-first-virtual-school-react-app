@@ -6,6 +6,7 @@ import aboutUsSlice from "./about-us-slice";
 import userDataObjectSlice from "./user-data-object-slice";
 import modalSlice from "./modal-slice";
 import importantLinksSlice from "./important-links-slice";
+import profilePictureSlice from "./profile-picture-slice";
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     userData: userDataObjectSlice.reducer,
     modal: modalSlice.reducer,
     importantLinks: importantLinksSlice.reducer,
+    profilePicture: profilePictureSlice.reducer,
   },
 });
 

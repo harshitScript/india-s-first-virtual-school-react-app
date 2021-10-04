@@ -122,7 +122,7 @@ const LoginFormCard = (props) => {
       .then((responseObj) => {
         // FOR CONFIRMATION LOGIN FORM
         if (currentActiveEmail) {
-          console.log("idtoken updated.");
+          //console.log("idtoken updated.");
           authCtx.updateIdToken(responseObj.data.idToken);
         }
 
