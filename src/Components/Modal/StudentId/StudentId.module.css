@@ -35,6 +35,13 @@
   text-transform: uppercase;
 }
 
+.warningClass {
+  color: orange;
+}
+.successClass {
+  color: green;
+}
+
 /* MOBILE VIEW */
 @media screen and (max-width: 500px) {
   .firstSpan {
